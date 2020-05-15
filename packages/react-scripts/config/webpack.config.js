@@ -469,9 +469,12 @@ module.exports = function(webpackEnv) {
               test: /\.hbs$/,
               loader: require.resolve('handlebars-loader'),
               options: {
-                helperDirs: [paths.appSrc + '\\panel-templates\\_helpers'],
-                partialDirs: [paths.appSrc + '\\panel-templates\\_partials']
-                // path.join(__dirname, 'templates', '_partials')
+                helperDirs: [
+                  path.join(paths.appSrc, 'panel-templates', '_helpers')
+                ],
+                partialDirs: [
+                  path.join(paths.appSrc, 'panel-templates', '_partials')
+                ]
               }
             },
             // "postcss" loader applies autoprefixer to our CSS.
